@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Adicionar Foto</title>
+</head>
+<body class="m-5">
+    <div class="container">
+
+        <div class="row  justify-content-center">
+            <div class="col-md-5">
+
+                <a href ="{% url 'gallery' %}" class="btn btn-dark my-4">Voltar </a>
+
+                <div class="card">
+                    <form method="POST" action="" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="form-group m-3"> 
+                            <label> Nome</label>
+                            <input required class="form-control" name="name" placeholder="Adicione um nome" type="text" id="formDescription">
+                          </div>
+
+                        <div class="form-group m-3"> 
+                            <label> Descrição</label>
+                            <input required class="form-control" name="description" placeholder="Adicione uma descrição breve" type="text" id="formDescription">
+                          </div>
+
+                          <div class="form-group m-3"> 
+                            <label>Escolha uma Categoria</label>
+                            <select class="form-control" name="category" >
+                                <option value="none">Escolha uma Categoria...</option>
+                                
+                                {% for category in categories %}
+                                
+                                    <option value="{{category.id}}">{{ category.name }}</option>
+
+                                {% endfor %}
+
+                            </select>
+                          </div>
+
+                          <div class="form-group m-3"> 
+                            <label> Criar Nova Categoria</label>
+                            <input name="category_new" type="text" placeholder="Nome da nova Categoria"
+                            class="form-control" >
+                          </div>
+
+                        <div class="form-group m-3">
+                            <label >Adicionar Fotos</label>
+                            <input required class="form-control-file" type="file" name="image">
+                          </div>
+
+                          
+                          <button type="submit" class=" btn btn-primary m-3" >Enviar</button>
+                    </form>  
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
