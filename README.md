@@ -79,5 +79,6 @@ AWS_S3_SECRET_ACCESS_KEY = env("AWS_S3_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 ```
 
-Once its done, if the bucket was correclty configured, it will run smoothly, and now you can deploy this project on Heroku, or any other CLoud Service you want ;)
-Hope you enjoy this Album!
+Once its done, if the bucket was correclty configured, it will run smoothly, and now you can deploy this project on Heroku, or any other Cloud Service you want ;)
+
+Hope you enjoy this Project!
