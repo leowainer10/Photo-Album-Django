@@ -9,9 +9,9 @@ def gallery(request):
 
     else:
         photos = Photo.objects.filter(category__name=category)
-
+    name = request.GET.get('name')
     categories = Category.objects.all()
-    context = { 'categories' : categories, 'photos': photos }
+    context = { 'categories' : categories, 'photos': photos, 'name': name }
     return render(request, 'album/gallery.html' , context)
 
 def viewPhoto(request, pk):
