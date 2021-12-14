@@ -61,9 +61,7 @@ AWS_QUERYSTRING_AUTH = False
 ...
 ```
 
-###
-
-Method 2
+### Method 2
   Creating a **.env** file, importing it in the **settings.py** file and referencig the VARIABLES to the values declared in the **.env** file
   
   In the **.env** file:
